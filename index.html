@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ángel - Full Stack Developer with 2 years of experience in Angular and Spring Boot. Relocating to Ireland (EU Citizen).">
+    <title>Ángel | Full Stack Developer</title>
+    
+    <!-- SEO & Open Graph Tags -->
+    <meta property="og:title" content="Ángel | Full Stack Developer">
+    <meta property="og:description" content="Full Stack Developer specializing in Angular & Spring Boot. 2 years of commercial experience. Relocating to Ireland (EU Citizen).">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts: Outfit (headings) & Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Feather Icons) for professional UI -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="main.js" defer></script>
+</head>
+<body>
+    <!-- Background Glow Elements -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+    <div class="glow-bg glow-3"></div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">Ángel<span>.dev</span></a>
+            <nav class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#journey" class="nav-link">Journey</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <a href="assets/Angel_Del_Solar_Full_Stack_Developer_CV.pdf" class="btn btn-primary btn-nav" download>
+                <i data-feather="download"></i> <span class="nav-btn-text">Download CV</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container hero-content">
+                <div class="relocation-badge animate-float">
+                    <span class="pulse-dot"></span>
+                    <i data-feather="map-pin" class="badge-icon"></i> Relocating to Ireland &bull; EU Citizen
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm Ángel.<br>
+                    <span class="text-gradient">Full Stack Developer</span>
+                </h1>
+                <p class="hero-subtitle">
+                    I build robust, responsive web applications using <strong>Spring Boot</strong> and <strong>Angular</strong>. I hold a Higher Certificate in Web Application Development (NFQ Level 6 Equivalent) and bring 2 years of commercial experience delivering end-to-end features in Agile environments.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        View My Work <i data-feather="arrow-right" class="btn-icon"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span class="scroll-text">Scroll Down</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="lead-text">
+                            A developer focused on creating clean, performant code and scalable systems.
+                        </p>
+                        <p>
+                            I hold a Higher Certificate in Web Application Development (Spanish DAW, NFQ Level 6 / HND Equivalent). My journey began with a BSc in Nutrition & Dietetics, which trained me in analytical thinking and systematic problem solving—skills I now apply directly to software development.
+                        </p>
+                        <p>
+                            Over the last 2 years, I have worked across the full software development lifecycle: writing secure Spring Boot APIs, crafting modern Angular interfaces, and optimizing database layers. I am excited to relocate to County Kildare/Dublin, Ireland in September 2026, and join an engineering team as a Full Stack or Java Developer.
+                        </p>
+                    </div>
+                    <div class="about-cards">
+                        <div class="about-card">
+                            <i data-feather="server" class="card-icon"></i>
+                            <h3>Backend Core</h3>
+                            <p>Java, Spring Boot, REST APIs, JPA/Hibernate, SQL Server.</p>
+                        </div>
+                        <div class="about-card">
+                            <i data-feather="layout" class="card-icon"></i>
+                            <h3>Frontend Modern</h3>
+                            <p>Angular, TypeScript, HTML5/CSS3, Responsive Web Design.</p>
+                        </div>
+                        <div class="about-card">
+                            <i data-feather="users" class="card-icon"></i>
+                            <h3>Agile Delivery</h3>
+                            <p>Git version control, Scrum methodology, CI/CD exposure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section (Timeline) -->
+        <section id="journey" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title">My Journey</h2>
+                <div class="journey-grid">
+                    <!-- Experience Column -->
+                    <div class="journey-col">
+                        <h3 class="col-title"><i data-feather="briefcase"></i> Experience</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">July 2024 &ndash; Present</span>
+                                    <h4 class="timeline-role">Full Stack Developer</h4>
+                                    <span class="timeline-company">Bodegas López Morenas &bull; Spain</span>
+                                    <ul class="timeline-bullets">
+                                        <li>Contributed to the end-to-end development of a production ERP system managing workflows for a 50+ employee winery.</li>
+                                        <li>Developed robust Angular 12 frontend features and scalable Spring Boot backend services using JPA/Hibernate.</li>
+                                        <li>Designed and maintained secure RESTful APIs, improving cross-layer data consistency.</li>
+                                        <li>Collaborated directly with stakeholders to deliver iterative improvements in an Agile environment.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">January 2024 &ndash; June 2024</span>
+                                    <h4 class="timeline-role">Full Stack Developer &mdash; Internship</h4>
+                                    <span class="timeline-company">MINSAIT (Indra Group) &bull; Spain</span>
+                                    <ul class="timeline-bullets">
+                                        <li>Contributed to an enterprise airline management web application using Spring Boot, Hibernate, and AngularJS.</li>
+                                        <li>Built and integrated backend REST endpoints, ensuring seamless cross-layer data flow.</li>
+                                        <li>Worked within a cross-functional team of 12, actively participating in Agile ceremonies.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Column -->
+                    <div class="journey-col">
+                        <h3 class="col-title"><i data-feather="book-open"></i> Education</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2022 &ndash; 2024</span>
+                                    <h4 class="timeline-role">Higher Certificate in Web Application Development</h4>
+                                    <span class="timeline-company">IES Castelar &bull; Spain</span>
+                                    <p class="timeline-desc">
+                                        Known as <strong>DAW</strong> in Spain. Equivalent to an <strong>NFQ Level 6</strong> or Higher National Diploma (HND). Intensive program focused on Web Development, Databases, Java, and Systems Administration.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2018 &ndash; 2022</span>
+                                    <h4 class="timeline-role">BSc in Nutrition & Dietetics</h4>
+                                    <span class="timeline-company">Univ. Pablo de Olavide &bull; Spain</span>
+                                    <p class="timeline-desc">
+                                        Developed skills in data collection, statistics, research methodologies, and logical analysis.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project 1 (Active) -->
+                    <article class="project-card">
+                        <div class="project-image-container">
+                            <img src="assets/weather-app.png" alt="Weather Froggy Screenshot" class="project-img">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header-row">
+                                <h3 class="project-title">Weather Froggy</h3>
+                                <span class="project-badge badge-active">Live</span>
+                            </div>
+                            <p class="project-desc">A progressive web app built with Angular and Signals, featuring API integrations and offline capabilities.</p>
+                            <div class="tech-stack">
+                                <span>Angular</span>
+                                <span>TypeScript</span>
+                                <span>SCSS</span>
+                                <span>PWA</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://weatherfroggy.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                                    <i data-feather="external-link"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/angeldsh/ReFroggy" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-text">
+                                    <i data-feather="github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 (In Development) -->
+                    <article class="project-card project-card-coming">
+                        <div class="project-image-container image-blur">
+                            <div class="construction-overlay">
+                                <i data-feather="tool" class="overlay-icon animate-bounce"></i>
+                                <span>Under Development</span>
+                            </div>
+                            <div class="project-image-placeholder">Food App</div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header-row">
+                                <h3 class="project-title">Food Ordering Platform</h3>
+                                <span class="project-badge badge-dev">In Dev</span>
+                            </div>
+                            <p class="project-desc">A full-stack, mobile-first ordering application using Ionic, TypeScript, and a Spring Boot backend architecture.</p>
+                            <div class="tech-stack">
+                                <span>Ionic</span>
+                                <span>Spring Boot</span>
+                                <span>Java</span>
+                                <span>SQL</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="coming-soon-text"><i data-feather="clock"></i> Demo Coming Soon</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-cat-header">
+                            <i data-feather="monitor" class="cat-icon text-cyan"></i>
+                            <h3>Frontend</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="tag-cyan">Angular</span>
+                            <span class="tag-cyan">TypeScript</span>
+                            <span class="tag-cyan">AngularJS</span>
+                            <span class="tag-cyan">HTML5 / CSS3</span>
+                            <span class="tag-cyan">SCSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-cat-header">
+                            <i data-feather="cpu" class="cat-icon text-purple"></i>
+                            <h3>Backend</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="tag-purple">Spring Boot</span>
+                            <span class="tag-purple">Java</span>
+                            <span class="tag-purple">REST APIs</span>
+                            <span class="tag-purple">JPA / Hibernate</span>
+                            <span class="tag-purple">SQL Server</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-cat-header">
+                            <i data-feather="sliders" class="cat-icon text-amber"></i>
+                            <h3>Tools & Methods</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="tag-amber">Git</span>
+                            <span class="tag-amber">Agile / Scrum</span>
+                            <span class="tag-amber">Docker</span>
+                            <span class="tag-amber">CI/CD Concepts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="contact-grid">
+                    <!-- Left: Contact Details -->
+                    <div class="contact-info">
+                        <p class="contact-lead">
+                            I am actively seeking Full Stack or Java Developer opportunities in Kildare and Dublin, Ireland, starting September 2026.
+                        </p>
+                        
+                        <div class="contact-details-list">
+                            <div class="contact-detail-item">
+                                <i data-feather="mail" class="detail-icon"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:angeldelsh@gmail.com" class="email-link">angeldelsh@gmail.com</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-detail-item">
+                                <i data-feather="map-pin" class="detail-icon"></i>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>County Kildare, Ireland &bull; EU Citizen</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Copy Email Card -->
+                        <div class="copy-email-card">
+                            <p>Prefer quick copying?</p>
+                            <button id="copy-email-btn" class="btn btn-secondary btn-full">
+                                <i data-feather="copy"></i> Copy Email Address
+                            </button>
+                        </div>
+
+                        <div class="social-links-row">
+                            <a href="https://linkedin.com/in/angeldelsolar" target="_blank" rel="noopener noreferrer" class="social-link-item" title="LinkedIn">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="https://github.com/angeldsh" target="_blank" rel="noopener noreferrer" class="social-link-item" title="GitHub">
+                                <i data-feather="github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form -->
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" action="https://formsubmit.co/angeldelsh@gmail.com" method="POST" class="contact-form">
+                            <!-- FormSubmit Configurations -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_subject" value="New Contact Message from Portfolio!">
+                            <input type="hidden" name="_template" value="box">
+
+                            <div class="form-group">
+                                <label for="form-name">Name</label>
+                                <input type="text" id="form-name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email</label>
+                                <input type="email" id="form-email" name="email" required placeholder="john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" name="message" required placeholder="Hi Ángel, I'd like to talk about..." rows="5"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                Send Message <i data-feather="send" class="btn-icon"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <i data-feather="check-circle" class="toast-icon"></i>
+        <span id="toast-message">Copied to clipboard!</span>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Ángel del Solar. All rights reserved.</p>
+            <p>Designed with vanilla tech for absolute speed & elegance.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>
