@@ -71,15 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 showToast('Email address copied to clipboard!');
                 
                 // Temporary button feedback
-                const originalHTML = copyEmailBtn.innerHTML;
-                copyEmailBtn.innerHTML = '✓ Copied!';
-                copyEmailBtn.style.borderColor = 'var(--cyan)';
-                copyEmailBtn.style.color = 'var(--cyan)';
+                copyEmailBtn.classList.add('copied');
                 
                 setTimeout(() => {
-                    copyEmailBtn.innerHTML = originalHTML;
-                    copyEmailBtn.style.borderColor = '';
-                    copyEmailBtn.style.color = '';
+                    copyEmailBtn.classList.remove('copied');
                 }, 2000);
             }).catch(err => {
                 showToast('Failed to copy. Please highlight & copy.');

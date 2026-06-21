@@ -1044,31 +1044,59 @@ h1, h2, h3, h4 {
     color: var(--text-primary);
 }
 
-/* Copy Email Card */
-.copy-email-card {
-    background-color: rgba(255, 255, 255, 0.02);
-    border: 1px dashed var(--border-color);
-    border-radius: var(--border-radius-lg);
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
+/* Email Container & Copy Button */
+.email-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
 }
 
-.copy-email-card p {
-    font-size: 0.88rem;
+.btn-copy-email {
+    background: transparent;
+    border: none;
+    cursor: pointer;
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.btn-copy-email:hover {
+    color: var(--cyan);
+    background-color: rgba(6, 182, 212, 0.15);
+    transform: scale(1.08);
+}
+
+.btn-copy-email svg {
+    width: 15px;
+    height: 15px;
+}
+
+.btn-copy-email .icon-check {
+    display: none !important;
+}
+
+.btn-copy-email.copied .icon-copy {
+    display: none !important;
+}
+
+.btn-copy-email.copied .icon-check {
+    display: inline-flex !important;
+    color: var(--cyan);
 }
 
 /* Social Icon Rows */
 .social-links-row {
     display: flex;
-    gap: 1rem;
+    gap: 1.2rem;
 }
 
 .social-link-item {
-    width: 46px;
-    height: 46px;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1079,11 +1107,16 @@ h1, h2, h3, h4 {
     transition: all var(--transition-smooth);
 }
 
+.social-link-item svg {
+    width: 24px;
+    height: 24px;
+}
+
 .social-link-item:hover {
     color: var(--cyan);
     border-color: var(--cyan);
     background-color: var(--cyan-glow);
-    transform: translateY(-3px);
+    transform: translateY(-4px) scale(1.05);
 }
 
 .social-link-item:nth-child(2):hover {
