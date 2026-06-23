@@ -6,6 +6,7 @@
     --bg-primary: #080b11;     /* Ultra dark space blue */
     --bg-secondary: #0f131f;   /* Card base */
     --bg-card: rgba(15, 19, 31, 0.65);
+    --bg-card-hover: rgba(15, 19, 31, 0.85);
     
     --text-primary: #f8fafc;   /* Slate 50 */
     --text-secondary: #94a3b8; /* Slate 400 */
@@ -28,6 +29,11 @@
     --border-color: rgba(255, 255, 255, 0.06);
     --border-hover: rgba(255, 255, 255, 0.12);
     
+    /* Navbar styles */
+    --bg-navbar: rgba(8, 11, 17, 0.7);
+    --bg-navbar-scrolled: rgba(8, 11, 17, 0.85);
+    --navbar-shadow: rgba(0, 0, 0, 0.5);
+    
     /* Typography */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
@@ -43,6 +49,38 @@
     --transition-fast: 0.18s ease;
     --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.light-theme {
+    /* Color Palette - Premium Light Slate / Off-White */
+    --bg-primary: #f8fafc;     /* Light slate 50 */
+    --bg-secondary: #ffffff;   /* Pure white cards */
+    --bg-card: rgba(255, 255, 255, 0.75);
+    --bg-card-hover: rgba(255, 255, 255, 0.95);
+    
+    --text-primary: #0f172a;   /* Slate 900 */
+    --text-secondary: #475569; /* Slate 600 */
+    --text-muted: #64748b;     /* Slate 500 */
+    
+    --cyan: #0891b2;           /* Darker cyan for contrast */
+    --cyan-glow: rgba(8, 145, 178, 0.08);
+    
+    --purple: #7c3aed;         /* Darker purple for contrast */
+    --purple-glow: rgba(124, 58, 237, 0.08);
+    
+    --amber: #b45309;          /* Darker amber for contrast */
+    --amber-glow: rgba(180, 83, 9, 0.08);
+    
+    --accent-primary: var(--cyan);
+    --accent-secondary: var(--purple);
+    --accent-glow: rgba(8, 145, 178, 0.15);
+    
+    --border-color: rgba(15, 23, 42, 0.08); /* Darker border for cards */
+    --border-hover: rgba(15, 23, 42, 0.15);
+    
+    --bg-navbar: rgba(248, 250, 252, 0.7);
+    --bg-navbar-scrolled: rgba(248, 250, 252, 0.85);
+    --navbar-shadow: rgba(15, 23, 42, 0.08);
 }
 
 /* =========================================
@@ -293,13 +331,19 @@ h1, h2, h3, h4 {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(8, 11, 17, 0.7);
+    background-color: var(--bg-navbar);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
     padding: 1.1rem 0;
     transition: all var(--transition-smooth);
+}
+
+.navbar.scrolled {
+    background-color: var(--bg-navbar-scrolled);
+    box-shadow: 0 10px 30px -10px var(--navbar-shadow);
+    padding: 0.8rem 0;
 }
 
 .nav-content {
@@ -544,7 +588,7 @@ h1, h2, h3, h4 {
 .about-card:hover {
     transform: translateX(6px);
     border-color: var(--border-hover);
-    background-color: rgba(15, 19, 31, 0.85);
+    background-color: var(--bg-card-hover);
 }
 
 .about-card:hover::before {
@@ -1523,4 +1567,165 @@ body.cinematic-transitioning main {
     }
 }
 
+/* =========================================
+   THEME TOGGLE BUTTON & NAV ACTIONS
+   ========================================= */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 
+.theme-switch {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.switch-track {
+    width: 60px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    position: relative;
+    transition: all var(--transition-smooth);
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch:hover .switch-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--border-hover);
+}
+
+.light-theme .switch-track {
+    background: rgba(15, 23, 42, 0.08);
+}
+
+.light-theme .theme-switch:hover .switch-track {
+    background: rgba(15, 23, 42, 0.12);
+}
+
+.switch-thumb {
+    width: 24px;
+    height: 24px;
+    background: var(--bg-primary); /* Dark circle inside the track */
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.light-theme .switch-thumb {
+    transform: translateX(28px);
+    background: #ffffff; /* White circle in light mode */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.switch-thumb svg {
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark mode (default): thumb is on the left. Icon = Moon. */
+:root:not(.light-theme) .switch-thumb .icon-sun {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.3);
+}
+:root:not(.light-theme) .switch-thumb .icon-moon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+    color: var(--cyan);
+}
+
+/* Light mode: thumb is on the right. Icon = Sun. */
+.light-theme .switch-thumb .icon-sun {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+    color: var(--amber);
+}
+.light-theme .switch-thumb .icon-moon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.3);
+}
+
+/* =========================================
+   LIGHT THEME OVERRIDES
+   ========================================= */
+.light-theme .section-dark {
+    background-color: #f1f5f9; /* Slate 100 */
+}
+
+.light-theme .project-image-placeholder {
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+}
+
+.light-theme .construction-overlay {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.light-theme .form-group input,
+.light-theme .form-group textarea {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.light-theme .form-group input:focus,
+.light-theme .form-group textarea:focus {
+    background-color: #ffffff;
+}
+
+.light-theme .btn-secondary {
+    background-color: rgba(15, 23, 42, 0.04);
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+.light-theme .btn-secondary:hover {
+    background-color: rgba(15, 23, 42, 0.08);
+    border-color: rgba(15, 23, 42, 0.15);
+}
+
+.light-theme .detail-icon,
+.light-theme .social-link-item,
+.light-theme .tech-stack span {
+    background-color: rgba(15, 23, 42, 0.03);
+}
+
+.light-theme .toast {
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+}
+
+/* Reduced glow opacities for clean aesthetics in light mode */
+.light-theme .glow-bg {
+    opacity: 0.15;
+}
+
+/* =========================================
+   THEME TRANSITION UTILITY
+   ========================================= */
+.theme-transition,
+.theme-transition * {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+@media (max-width: 480px) {
+    .switch-track {
+        transform: scale(0.9);
+        transform-origin: right center;
+    }
+}

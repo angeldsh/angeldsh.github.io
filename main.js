@@ -4,13 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 40) {
-            navbar.style.backgroundColor = 'rgba(8, 11, 17, 0.85)';
-            navbar.style.boxShadow = '0 10px 30px -10px rgba(0, 0, 0, 0.5)';
-            navbar.style.padding = '0.8rem 0';
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.backgroundColor = 'rgba(8, 11, 17, 0.7)';
-            navbar.style.boxShadow = 'none';
-            navbar.style.padding = '1.1rem 0';
+            navbar.classList.remove('scrolled');
         }
     });
 
@@ -197,4 +193,25 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.add('reveal-item');
         revealObserver.observe(item);
     });
+
+    // 8. Theme Toggle Handling
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            // Apply temporary class for smooth transitions
+            document.documentElement.classList.add('theme-transition');
+            
+            // Toggle theme class
+            document.documentElement.classList.toggle('light-theme');
+            
+            // Save state to localStorage
+            const isLight = document.documentElement.classList.contains('light-theme');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            
+            // Remove transition class after animation completes
+            setTimeout(() => {
+                document.documentElement.classList.remove('theme-transition');
+            }, 800);
+        });
+    }
 });

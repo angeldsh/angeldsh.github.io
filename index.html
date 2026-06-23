@@ -21,6 +21,15 @@
     
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="main.js" defer></script>
+    <script>
+        // Immediately apply saved or system theme to prevent FOUC
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light' || (!savedTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
 </head>
 <body>
     <!-- Background Glow Elements -->
@@ -39,9 +48,19 @@
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            <a href="assets/Angel_Del_Solar_Full_Stack_Developer_CV.pdf" class="btn btn-primary btn-nav" download>
-                <i data-feather="download"></i> <span class="nav-btn-text">Download CV</span>
-            </a>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-switch" aria-label="Toggle dark/light theme">
+                    <span class="switch-track">
+                        <span class="switch-thumb">
+                            <i data-feather="moon" class="icon-moon"></i>
+                            <i data-feather="sun" class="icon-sun"></i>
+                        </span>
+                    </span>
+                </button>
+                <a href="assets/Angel_Del_Solar_Full_Stack_Developer_CV.pdf" class="btn btn-primary btn-nav" download>
+                    <i data-feather="download"></i> <span class="nav-btn-text">Download CV</span>
+                </a>
+            </div>
         </div>
     </header>
 
