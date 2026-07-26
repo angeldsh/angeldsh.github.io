@@ -52,10 +52,10 @@
 }
 
 .light-theme {
-    /* Color Palette - Premium Light Slate / Off-White */
-    --bg-primary: #f8fafc;     /* Light slate 50 */
-    --bg-secondary: #ffffff;   /* Pure white cards */
-    --bg-card: rgba(255, 255, 255, 0.75);
+    /* Color Palette - Premium Soft Light Slate / Off-White */
+    --bg-primary: #f1f5f9;     /* Soft slate 100 */
+    --bg-secondary: #f8fafc;   /* Soft off-white slate 50 cards */
+    --bg-card: rgba(248, 250, 252, 0.85);
     --bg-card-hover: rgba(255, 255, 255, 0.95);
     
     --text-primary: #0f172a;   /* Slate 900 */
@@ -78,8 +78,8 @@
     --border-color: rgba(15, 23, 42, 0.08); /* Darker border for cards */
     --border-hover: rgba(15, 23, 42, 0.15);
     
-    --bg-navbar: rgba(248, 250, 252, 0.7);
-    --bg-navbar-scrolled: rgba(248, 250, 252, 0.85);
+    --bg-navbar: rgba(241, 245, 249, 0.82);
+    --bg-navbar-scrolled: rgba(241, 245, 249, 0.94);
     --navbar-shadow: rgba(15, 23, 42, 0.08);
 }
 
@@ -915,11 +915,21 @@ h1, h2, h3, h4 {
 .tech-stack span {
     font-size: 0.75rem;
     font-weight: 600;
-    padding: 0.3rem 0.85rem;
+    padding: 0.35rem 0.9rem;
     border-radius: 50px;
     background-color: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(4px);
+}
+
+.tech-stack span:hover {
+    color: var(--text-primary);
+    border-color: rgba(6, 182, 212, 0.35);
+    background-color: rgba(6, 182, 212, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.15);
 }
 
 .project-links {
@@ -1312,8 +1322,8 @@ h1, h2, h3, h4 {
     }
     
     .hero {
-        text-align: center;
-        align-items: center;
+        text-align: left;
+        align-items: flex-start;
         min-height: auto;
         height: auto;
         padding-top: 130px;
@@ -1325,8 +1335,8 @@ h1, h2, h3, h4 {
     }
     
     .hero-subtitle {
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 0;
+        margin-right: 0;
         font-size: 1.15rem;
     }
     
@@ -1668,7 +1678,7 @@ body.cinematic-transitioning main {
    LIGHT THEME OVERRIDES
    ========================================= */
 .light-theme .section-dark {
-    background-color: #f1f5f9; /* Slate 100 */
+    background-color: #e2e8f0; /* Slate 200 - soft contrast background */
 }
 
 .light-theme .project-image-placeholder {
